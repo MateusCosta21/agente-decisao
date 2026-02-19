@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 
+import { analysisRoutes } from "./routes/analysisRoutes";
 import { healthRoutes } from "./routes/healthRoutes";
 import { ingestionRoutes } from "./routes/ingestionRoutes";
 
@@ -12,6 +13,7 @@ const port = Number(process.env.PORT ?? 3000);
 app.use(express.json());
 app.use(healthRoutes);
 app.use(ingestionRoutes);
+app.use(analysisRoutes);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

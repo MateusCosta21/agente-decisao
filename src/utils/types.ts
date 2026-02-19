@@ -50,3 +50,9 @@ export type ProcessedSummary = {
   aumentosDesproporcionais: DisproportionalIncrease[];
   eventosRelacionados: EventInput[];
 };
+
+export type AnalysisResult = {
+  resumo: string;
+  principais_causas: string[];
+  pergunta_critica: string;
+};
