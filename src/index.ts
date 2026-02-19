@@ -4,6 +4,7 @@ import express from "express";
 import { analysisRoutes } from "./routes/analysisRoutes";
 import { healthRoutes } from "./routes/healthRoutes";
 import { ingestionRoutes } from "./routes/ingestionRoutes";
+import { errorHandler, notFoundHandler } from "./utils/errors";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.use(healthRoutes);
 app.use(ingestionRoutes);
 app.use(analysisRoutes);
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
